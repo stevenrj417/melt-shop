@@ -6,7 +6,7 @@ Launch site for MELT squeeze butter and the first merch drop.
 
 ```bash
 npm install
-npm run dev
+npx vercel@latest dev
 ```
 
 The waitlist endpoint stores one private JSON record per email in Vercel Blob. Connect a private Blob store to the Vercel project so `BLOB_READ_WRITE_TOKEN` is available. In local development without that token, successful submissions are logged with the email redacted.
