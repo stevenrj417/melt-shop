@@ -4,13 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vercel dev",
     "check": "node --check api/waitlist.js && node --check public/site.js"
   },
   "dependencies": {
     "@vercel/blob": "^2.8.2"
-  },
-  "devDependencies": {
-    "vercel": "^64.7.0"
   }
 }
