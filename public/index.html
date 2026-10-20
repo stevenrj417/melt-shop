@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MELT. — Butter Without the Bother</title>
+    <meta name="description" content="MELT is real butter made ready to squeeze, spread, and drizzle. Join the waitlist for the first drop and limited merch.">
+    <meta name="theme-color" content="#f6e4bb">
+    <meta property="og:title" content="MELT. — Butter Without the Bother">
+    <meta property="og:description" content="Real butter. Zero butter drama. Join the MELT waitlist.">
+    <meta property="og:image" content="/melt-butter.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;900&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="MELT home">MELT.<sup>™</sup></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>Menu</button>
+      <nav class="nav-links" id="site-nav" aria-label="Main navigation" data-nav-links>
+        <a href="#story">Our story</a>
+        <a href="#merch">Merch</a>
+        <a class="nav-cta" href="#waitlist">Join the list</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Coming soon to a fridge near you</p>
+          <h1>Makes everything better.</h1>
+          <p>Real butter, made ready to squeeze, spread, and drizzle. No knife. No waiting. No cold little brick fighting back.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#waitlist">Get first dibs</a>
+            <a class="button secondary" href="#story">What is MELT?</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="MELT squeeze butter bottle">
+          <img src="/melt-butter.jpg" alt="A yellow squeeze bottle of MELT real butter on a warm cream backdrop" width="1024" height="1536" fetchpriority="high">
+          <div class="roundel">Butter without the bother.</div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>SQUEEZE ✦ SPREAD ✦ DRIZZLE ✦ REAL BUTTER ✦</span><span>SQUEEZE ✦ SPREAD ✦ DRIZZLE ✦ REAL BUTTER ✦</span><span>SQUEEZE ✦ SPREAD ✦ DRIZZLE ✦ REAL BUTTER ✦</span><span>SQUEEZE ✦ SPREAD ✦ DRIZZLE ✦ REAL BUTTER ✦</span>
+        </div>
+      </div>
+
+      <section class="section" id="story">
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="eyebrow">The soft launch</p>
+            <h2>Butter, better behaved.</h2>
+          </div>
+          <p>MELT starts with the good stuff—real butter, cream, and salt—then makes it easy enough for a Tuesday toast and fun enough for the middle of the table.</p>
+        </div>
+        <div class="story-grid">
+          <article class="story-card" data-reveal>
+            <span class="card-number">01</span>
+            <div><h3>Grab</h3><p>Lives right in the fridge door, ready whenever breakfast, popcorn, pasta, or a baked potato calls.</p></div>
+          </article>
+          <article class="story-card" data-reveal>
+            <span class="card-number">02</span>
+            <div><h3>Squeeze</h3><p>A tidy bottle and a pointy top give you control without the knife, dish, or torn-up toast.</p></div>
+          </article>
+          <article class="story-card" data-reveal>
+            <span class="card-number">03</span>
+            <div><h3>Make it MELT.</h3><p>Spread it, drizzle it, or draw a little smiley face. Food should taste good and feel a little fun.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="merch-section" id="merch">
+        <div class="merch-top" data-reveal>
+          <div><p class="eyebrow">The butter club</p><h2>Wear the spread.</h2></div>
+          <p>Small-batch merch for people who think the fridge door deserves better branding. Waitlist members shop first.</p>
+        </div>
+        <div class="merch-grid">
+          <article class="merch-card" data-reveal>
+            <div class="merch-art"><div class="shirt" aria-hidden="true"></div></div>
+            <div class="merch-info"><h3>Big Melt Tee</h3><span>Coming soon</span></div>
+          </article>
+          <article class="merch-card" data-reveal>
+            <div class="merch-art"><div class="cap" aria-hidden="true"></div></div>
+            <div class="merch-info"><h3>Butter Cap</h3><span>Coming soon</span></div>
+          </article>
+          <article class="merch-card" data-reveal>
+            <div class="merch-art"><div class="tote" aria-hidden="true">HOT<br>STUFF</div></div>
+            <div class="merch-info"><h3>Grocery Tote</h3><span>Coming soon</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="waitlist" id="waitlist" data-reveal>
+        <div class="waitlist-copy">
+          <p class="eyebrow" style="color:var(--yellow)">Get it while it’s hot</p>
+          <h2>First squeeze is yours.</h2>
+          <p>Join for launch news, first access to MELT, and the inaugural merch drop. That’s it—no daily toast pics unless you ask nicely.</p>
+          <span class="promise">No spam. Just the good stuff.</span>
+        </div>
+        <form class="waitlist-form" data-waitlist-form>
+          <div class="field-row">
+            <div class="field">
+              <label for="first-name">First name</label>
+              <input id="first-name" name="firstName" autocomplete="given-name" placeholder="Pat">
+            </div>
+            <div class="field">
+              <label for="interest">I'm here for</label>
+              <select id="interest" name="interest">
+                <option value="both">Butter + merch</option>
+                <option value="butter">The butter</option>
+                <option value="merch">The merch</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="you@example.com">
+          </div>
+          <div class="honeypot" aria-hidden="true">
+            <label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="button primary" type="submit">Join the waitlist →</button>
+          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <a class="brand" href="#top" aria-label="Back to top">MELT.</a>
+        <p>Real butter for real life. Squeeze generously.</p>
+      </div>
+      <div class="footer-bottom"><span>© 2026 MELT. All rights reserved.</span><span>Made for toast, corn &amp; good decisions.</span></div>
+    </footer>
+  </body>
+</html>
