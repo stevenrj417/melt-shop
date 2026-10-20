@@ -77,23 +77,67 @@
       <section class="merch-section" id="merch">
         <div class="merch-top" data-reveal>
           <div><p class="eyebrow">The butter club</p><h2>Wear the spread.</h2></div>
-          <p>Small-batch merch for people who think the fridge door deserves better branding. Waitlist members shop first.</p>
+          <p>Three small-batch pieces for people who think the fridge door deserves better branding. Tap any piece for the full look.</p>
         </div>
         <div class="merch-grid">
-          <article class="merch-card" data-reveal>
-            <div class="merch-art"><div class="shirt" aria-hidden="true"></div></div>
-            <div class="merch-info"><h3>Big Melt Tee</h3><span>Coming soon</span></div>
-          </article>
-          <article class="merch-card" data-reveal>
-            <div class="merch-art"><div class="cap" aria-hidden="true"></div></div>
-            <div class="merch-info"><h3>Butter Cap</h3><span>Coming soon</span></div>
-          </article>
-          <article class="merch-card" data-reveal>
-            <div class="merch-art"><div class="tote" aria-hidden="true">HOT<br>STUFF</div></div>
-            <div class="merch-info"><h3>Grocery Tote</h3><span>Coming soon</span></div>
-          </article>
+          <button class="merch-card" type="button" data-product="tee" data-reveal aria-label="View Butter Club Tee details">
+            <span class="merch-art">
+              <img src="/merch/butter-club-tee.jpg" alt="Four views of the butter-yellow MELT Butter Club t-shirt" width="1312" height="1199" loading="lazy">
+              <span class="view-pill">View piece →</span>
+            </span>
+            <span class="merch-info">
+              <span><strong>Butter Club Tee</strong><small>Butter yellow · S–3XL</small></span>
+              <span class="merch-price">$32</span>
+            </span>
+          </button>
+          <button class="merch-card" type="button" data-product="cap" data-reveal aria-label="View Breakfast Club Cap details">
+            <span class="merch-art">
+              <img src="/merch/breakfast-club-cap.jpg" alt="Four views of the butter-yellow MELT Breakfast Club cap" width="1312" height="1199" loading="lazy">
+              <span class="view-pill">View piece →</span>
+            </span>
+            <span class="merch-info">
+              <span><strong>Breakfast Club Cap</strong><small>Washed cotton · Adjustable</small></span>
+              <span class="merch-price">$28</span>
+            </span>
+          </button>
+          <button class="merch-card" type="button" data-product="tote" data-reveal aria-label="View Butter Boy Tote details">
+            <span class="merch-art">
+              <img src="/merch/butter-boy-tote.jpg" alt="Multiple views of the cream and red MELT Butter Boy canvas tote" width="1223" height="1286" loading="lazy">
+              <span class="view-pill">View piece →</span>
+            </span>
+            <span class="merch-info">
+              <span><strong>Butter Boy Tote</strong><small>Heavy canvas · Bottle pocket</small></span>
+              <span class="merch-price">$36</span>
+            </span>
+          </button>
+        </div>
+        <div class="merch-note" data-reveal>
+          <span>Drop preview</span>
+          <p>Orders aren’t open just yet. Join the list and you’ll be first through the door.</p>
+          <a class="button secondary" href="#waitlist">Get first access</a>
         </div>
       </section>
+
+      <dialog class="product-dialog" data-product-dialog>
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close product details">×</button>
+        <div class="dialog-layout">
+          <div class="dialog-image-wrap">
+            <img data-dialog-image src="" alt="">
+          </div>
+          <div class="dialog-copy">
+            <p class="eyebrow">MELT merch preview</p>
+            <h2 data-dialog-title></h2>
+            <p class="dialog-price" data-dialog-price></p>
+            <p class="dialog-description" data-dialog-description></p>
+            <dl class="product-facts">
+              <div><dt>Color</dt><dd data-dialog-color></dd></div>
+              <div><dt>Details</dt><dd data-dialog-details></dd></div>
+              <div><dt>Release</dt><dd>First drop · Coming soon</dd></div>
+            </dl>
+            <a class="button primary" href="#waitlist" data-dialog-cta>Join for first access →</a>
+          </div>
+        </div>
+      </dialog>
 
       <section class="waitlist" id="waitlist" data-reveal>
         <div class="waitlist-copy">

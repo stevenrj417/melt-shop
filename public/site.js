@@ -51,6 +51,68 @@ navLinks?.addEventListener("click", (event) => {
   }
 });
 
+const products = {
+  tee: {
+    title: "Butter Club Tee",
+    price: "$32",
+    image: "/merch/butter-club-tee.jpg",
+    alt: "Four views of the butter-yellow MELT Butter Club t-shirt",
+    color: "Butter yellow with MELT red ink",
+    details: "Relaxed unisex fit · Sizes S–3XL",
+    description: "A heavyweight everyday tee with the MELT butter boy at the chest and a quiet Butter Club hit at the back neck. Soft, sunny, and extremely breakfast friendly."
+  },
+  cap: {
+    title: "Breakfast Club Cap",
+    price: "$28",
+    image: "/merch/breakfast-club-cap.jpg",
+    alt: "Four views of the butter-yellow MELT Breakfast Club cap",
+    color: "Washed butter yellow with MELT red embroidery",
+    details: "Low-profile cotton · Adjustable metal closure",
+    description: "The official lid of slow mornings. Embroidered butter boy up front, MELT at the side, and The Breakfast Club across the back."
+  },
+  tote: {
+    title: "Butter Boy Tote",
+    price: "$36",
+    image: "/merch/butter-boy-tote.jpg",
+    alt: "Multiple views of the cream and red MELT Butter Boy canvas tote",
+    color: "Natural canvas with MELT red trim",
+    details: "Heavy canvas · Interior pocket · Bottle sleeve",
+    description: "A sturdy market tote built for the important stuff: bread, flowers, snacks, and one very special squeeze bottle in its own side pocket."
+  }
+};
+
+const productDialog = document.querySelector("[data-product-dialog]");
+const dialogClose = document.querySelector("[data-dialog-close]");
+const dialogImage = document.querySelector("[data-dialog-image]");
+const dialogTitle = document.querySelector("[data-dialog-title]");
+const dialogPrice = document.querySelector("[data-dialog-price]");
+const dialogDescription = document.querySelector("[data-dialog-description]");
+const dialogColor = document.querySelector("[data-dialog-color]");
+const dialogDetails = document.querySelector("[data-dialog-details]");
+const dialogCta = document.querySelector("[data-dialog-cta]");
+
+document.querySelectorAll("[data-product]").forEach((card) => {
+  card.addEventListener("click", () => {
+    const product = products[card.dataset.product];
+    if (!product || !productDialog) return;
+
+    dialogImage.src = product.image;
+    dialogImage.alt = product.alt;
+    dialogTitle.textContent = product.title;
+    dialogPrice.textContent = product.price;
+    dialogDescription.textContent = product.description;
+    dialogColor.textContent = product.color;
+    dialogDetails.textContent = product.details;
+    productDialog.showModal();
+  });
+});
+
+dialogClose?.addEventListener("click", () => productDialog.close());
+dialogCta?.addEventListener("click", () => productDialog.close());
+productDialog?.addEventListener("click", (event) => {
+  if (event.target === productDialog) productDialog.close();
+});
+
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   const observer = new IntersectionObserver(
     (entries) => entries.forEach((entry) => {

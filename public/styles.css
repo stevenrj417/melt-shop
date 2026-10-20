@@ -260,27 +260,97 @@ h1 {
 .merch-top p { max-width: 25rem; font-family: Georgia, serif; font-size: 1.2rem; line-height: 1.5; }
 .merch-grid { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .merch-card {
+  padding: 0;
+  color: inherit;
+  text-align: left;
+  font: inherit;
   border: var(--line) solid var(--red);
   border-radius: 1.5rem;
   overflow: hidden;
   background: var(--paper);
-  transition: transform .2s ease;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.merch-card:hover { transform: translateY(-6px) rotate(-.5deg); }
-.merch-art { min-height: 330px; display: grid; place-items: center; position: relative; overflow: hidden; }
-.merch-card:nth-child(2) .merch-art { background: var(--red); }
-.merch-card:nth-child(3) .merch-art { background: #d7c6a3; }
-.merch-info { display: flex; justify-content: space-between; gap: 1rem; padding: 1.2rem 1.3rem; border-top: var(--line) solid var(--red); }
-.merch-info h3 { color: var(--red); font-family: "Shrikhand", Georgia, serif; font-size: 1.5rem; font-weight: 400; margin: 0; }
-.merch-info span { text-transform: uppercase; font-size: .72rem; letter-spacing: .1em; }
+.merch-card:hover { transform: translateY(-7px) rotate(-.35deg); box-shadow: 7px 8px 0 rgba(112,24,19,.28); }
+.merch-card:focus-visible { outline: 4px solid var(--red-dark); outline-offset: 4px; }
+.merch-art { aspect-ratio: 1 / .92; display: block; position: relative; overflow: hidden; background: #ccb28c; }
+.merch-art img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+.merch-card:hover .merch-art img { transform: scale(1.035); }
+.view-pill {
+  position: absolute;
+  right: .8rem;
+  bottom: .8rem;
+  padding: .55rem .75rem;
+  border: 2px solid var(--red);
+  border-radius: 999px;
+  color: var(--paper);
+  background: var(--red);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .68rem;
+}
+.merch-info { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 1.15rem 1.25rem 1.25rem; border-top: var(--line) solid var(--red); }
+.merch-info > span:first-child { display: grid; gap: .25rem; }
+.merch-info strong { color: var(--red); font-family: "Shrikhand", Georgia, serif; font-size: 1.45rem; font-weight: 400; line-height: 1.1; }
+.merch-info small { text-transform: uppercase; font-size: .66rem; letter-spacing: .08em; }
+.merch-price { color: var(--red); font-family: "Shrikhand", Georgia, serif; font-size: 1.45rem; line-height: 1; white-space: nowrap; }
+.merch-note {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  border: 2px dashed var(--red);
+  border-radius: 1.2rem;
+  background: rgba(255,242,210,.55);
+}
+.merch-note > span { color: var(--red); text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; font-weight: 900; }
+.merch-note p { margin: 0; font-family: Georgia, serif; }
+.merch-note .button { min-height: 2.8rem; padding-block: .6rem; }
 
-.shirt { width: 68%; aspect-ratio: 1.05; position: relative; background: var(--cream); clip-path: polygon(20% 0,37% 10%,63% 10%,80% 0,100% 19%,86% 38%,75% 28%,77% 100%,23% 100%,25% 28%,14% 38%,0 19%); filter: drop-shadow(9px 10px 0 rgba(112,24,19,.35)); }
-.shirt::after { content: "MELT."; position: absolute; inset: 40% 0 auto; color: var(--red); text-align: center; font-family: "Shrikhand", Georgia, serif; font-size: clamp(1.5rem, 4vw, 3rem); }
-.cap { width: 60%; aspect-ratio: 1.7; position: relative; border-radius: 50% 50% 15% 15%; background: var(--yellow); box-shadow: 7px 8px 0 var(--red-dark); }
-.cap::before { content: "MELT."; position: absolute; inset: 32% 0 auto; color: var(--red); text-align: center; font-family: "Shrikhand", Georgia, serif; font-size: clamp(1.4rem, 3vw, 2.4rem); }
-.cap::after { content: ""; position: absolute; width: 65%; height: 28%; right: -32%; bottom: -9%; border-radius: 50%; background: var(--yellow); border-bottom: var(--line) solid var(--red-dark); transform: rotate(8deg); }
-.tote { width: 58%; height: 62%; border: var(--line) solid var(--red-dark); background: var(--cream); display: grid; place-items: center; color: var(--red); font-family: "Shrikhand", Georgia, serif; font-size: clamp(1.4rem, 3vw, 2.5rem); box-shadow: 8px 10px 0 rgba(112,24,19,.28); }
-.tote::before { content: ""; position: absolute; width: 27%; height: 25%; top: 9%; border: var(--line) solid var(--red-dark); border-bottom: 0; border-radius: 50% 50% 0 0; }
+.product-dialog {
+  width: min(1040px, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  border: var(--line) solid var(--red);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 10px 10px 0 var(--red-dark);
+}
+.product-dialog::backdrop { background: rgba(45,36,27,.72); backdrop-filter: blur(5px); }
+.dialog-close {
+  position: absolute;
+  z-index: 2;
+  top: .8rem;
+  right: .8rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  color: var(--paper);
+  background: var(--red);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.dialog-layout { display: grid; grid-template-columns: 1.15fr .85fr; min-height: 610px; }
+.dialog-image-wrap { min-width: 0; background: #ccb28c; }
+.dialog-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.dialog-copy { padding: clamp(2rem, 5vw, 4.5rem); align-self: center; }
+.dialog-copy h2 { margin: .6rem 0 .4rem; color: var(--red); font-family: "Shrikhand", Georgia, serif; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 400; line-height: .9; }
+.dialog-price { margin-bottom: 1.4rem; color: var(--red); font-family: "Shrikhand", Georgia, serif; font-size: 1.9rem; }
+.dialog-description { font-family: Georgia, serif; font-size: 1.08rem; line-height: 1.55; }
+.product-facts { margin: 1.5rem 0 2rem; border-block: 2px solid rgba(169,35,26,.35); }
+.product-facts div { padding: .7rem 0; display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; border-bottom: 1px solid rgba(169,35,26,.22); }
+.product-facts div:last-child { border-bottom: 0; }
+.product-facts dt { color: var(--red); text-transform: uppercase; letter-spacing: .09em; font-size: .68rem; }
+.product-facts dd { margin: 0; font-size: .88rem; }
+body:has(.product-dialog[open]) { overflow: hidden; }
 
 .waitlist {
   width: min(1180px, calc(100% - 2rem));
@@ -342,6 +412,11 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
   .story-grid, .merch-grid { grid-template-columns: 1fr; }
   .story-card { min-height: 240px; }
   .merch-top, .footer-main { align-items: flex-start; flex-direction: column; }
+  .merch-art { aspect-ratio: 1.3 / 1; }
+  .merch-note { grid-template-columns: 1fr; justify-items: start; }
+  .dialog-layout { grid-template-columns: 1fr; }
+  .dialog-image-wrap { min-height: 420px; }
+  .product-dialog { overflow-y: auto; }
 }
 
 @media (max-width: 520px) {
@@ -355,6 +430,9 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
   .section, .waitlist { width: calc(100% - 1rem); }
   .field-row { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; }
+  .merch-art { aspect-ratio: 1 / .96; }
+  .dialog-image-wrap { min-height: 330px; }
+  .dialog-copy { padding: 1.6rem 1.3rem 2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
